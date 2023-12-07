@@ -2,7 +2,7 @@
 Trabalho sobre conexão API com Java e JavaScript
 
 
-<h3>Desenvolvedores</h3>
+<h3>Desenvolvedor</h3>
 <table style="border:0;">
     <tr>
         <td><img src="images/carlos.png" alt="" style="height: 70px;"></td>
