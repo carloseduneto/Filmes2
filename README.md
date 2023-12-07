@@ -8,10 +8,6 @@ Trabalho sobre conexão API com Java e JavaScript
         <td><img src="images/carlos.png" alt="" style="height: 70px;"></td>
         <td><p>Carlos Eduardo - 006564</p></td>
     </tr>
-    <tr>
-        <td><img src="images/joao.png" alt="" style="height: 70px;"></td>
-        <td><p>João Vinícius - 006533</p></td>
-    </tr>
 </table>
 
 <h3>Demonstração</h3>
