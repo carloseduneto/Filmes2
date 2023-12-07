@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXEMPLO DE CADASTRO</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #141414;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+  			/*background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/c906271d-7184-4eec-83c9-b6d4c1a068ec/4dddaa85-5a1d-44af-ba88-97547adc2a8c/BR-pt-20231127-popsignuptwoweeks-perspective_alpha_website_large.jpg");
+  			background-position: center;
+            background-size: 110%;
+            z-index: 0;*/
+        }
+		/*
+		.sombra{
+		background: linear-gradient(76deg, rgba(0, 0, 0, 0.90) 26%, rgba(0, 0, 0, 0.90) 30.83%, rgba(0, 0, 0, 0.89) 35.67%, rgba(0, 0, 0, 0.87) 40.5%, rgba(0, 0, 0, 0.84) 45.33%, rgba(0, 0, 0, 0.81) 50.17%, rgba(0, 0, 0, 0.78) 55%, rgba(0, 0, 0, 0.74) 59.83%, rgba(0, 0, 0, 0.71) 64.67%, rgba(0, 0, 0, 0.68) 69.5%, rgba(0, 0, 0, 0.66) 74.33%, rgba(0, 0, 0, 0.65) 79.17%, rgba(0, 0, 0, 0.65) 84%);
+		height: 5000px;
+		width: 100%;
+		z-index: 1;
+		}
+		
+		.resto{
+		z-index: 2;
+		}*/
+
+        h1 {
+            text-align: center;
+            color: #792A95;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        #conteudo {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        #loading {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        input[type="button"] {
+            background-color: #e50914;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="button"]:hover {
+            background-color: #792A95;
+        }
+
+        input[type="text"] {
+            width: 250px;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 3px solid #792A95;
+            background-color: transparent;
+            color: #fff;
+        }
+
+        label {
+            width: 150px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        #formulario {
+            background-color: rgba(51, 51, 51, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        #formulario:hover {
+            background-color: rgba(51, 51, 51, 0.95);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #491959;
+            color: #fff;
+            border: solid 0px;
+        }
+
+        #lista {
+            margin-top: 20px;
+        }
+        
+        
+        #quadrado{
+        margin-top: 40px;
+        height: 400px;
+        width: 400px;
+        /*background: url("https://images.unsplash.com/photo-1682687220247-9f786e34d472?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        */
+        background-position: center;
+        background-size: cover;
+        transition: background-image 3.0s ease-in-out;
+        }
+        
+        .posicao{
+        display: flex;
+        flex-direction: row;
+        
+        }
+        
+        .campos{
+        margin-right:150px ;
+        }
+        
+        .verde{
+        background-color: green;
+        border: green 1px solid;
+        }
+        
+        .roxoClaro{
+        background-color: #792A95 ;
+        border: #792A95 1px solid;
+        color: white;
+        }
+        
+        .roxoClaro:hover{
+        background-color: #491959;        
+        border: #491959 1px solid;
+        color: white;
+        }
+        
+        .roxoClaro:active{
+        background-color: #491959;        
+        border: #491959 1px solid;
+        color: white;
+        }
+        
+        
+        .roxoEscuro{
+        background-color: #491959;
+        }
+    </style>
+</head>
+
+<body>
+	<div class=sombra>
+	<div class="resto">
+    <div class="container">
+        <h1 class="display-4"><img alt="" src="logo.png" width="300px"></h1>
+        <div id="loading" class="text-center"></div>
+
+        <div id="conteudo">
+            <button type="button" id="novo" class="btn roxoClaro" onclick="novo()">
+                <i class="fas fa-plus"></i> Novo
+            </button>
+            <div id="formulario" style="display: none;">
+            	<div class="posicao">
+            	<div class="campos">
+                <label>Título: <input type="text" id="titulo"></label><br>
+                <label>Lançamento: <input type="text" id="lancamento"></label><br>
+                <label>Duração: <input type="text" id="duracao"></label><br>
+                <label>Classificação: <input type="text" id="classificacao"></label><br>
+                <label>Gênero: <input type="text" id="genero"></label><br>
+                </div>
+                
+                <div id="quadrado"></div>
+                
+                </div>
+                <button type="button" class="btn roxoClaro" onclick="salvar()">
+                    <i class="fas fa-save"></i> Salvar
+                </button>
+                <button type="button" class="btn btn-secondary" onclick="cancelar()">
+                    <i class="fas fa-times"></i> Cancelar
+                </button>
+            </div>
+            <div id="lista">
+                <table class="table table-bordered table-dark">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Título</th>
+                            <th>Duração</th>
+                            <th>Classificação</th>
+                            <th>Gênero</th>
+                            <th>Lançamento</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="dados"></tbody>
+                </table>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="filmes2.js"></script>
+    </div>
+</div>
+</body>
+
+</html>
